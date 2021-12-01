@@ -1,0 +1,54 @@
+@import'../../../variables.scss';
+
+.asignacion-title{
+    margin-top: 30px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid $gris;
+    margin-bottom: 20px;
+}
+
+.contenedor-indiv{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+.contenedor-indiv :hover{
+    background-color: $gris_claro;
+}
+
+.asignacion-item{
+    padding: 30px 10px 10px 20px;
+    height: 200px;
+    border: 1px solid $negro3;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    text-align: left;
+}
+
+.cuerpo-cont{
+    height: 95px;
+    color: $verde2;
+    font-size: 14px;
+}
+
+.encabezado-cont{
+    height: 50px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    vertical-align: text-bottom;
+}
+
+hr{
+    width: 100%;
+    height: 1px;
+    background-color: $oro_boton;
+    border: 0;
+    padding: 0px 0px 0px 0px;
+    margin: 10px 0px 10px 0px;
+  }

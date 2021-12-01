@@ -1,0 +1,11 @@
+<div class="modal-container">
+  <h1 mat-dialog-title class="text-center">{{data.title}}</h1>
+  <div class="mt over">
+    <p class="col-12 text-center" [innerHTML]="data.message"></p><br>
+    <p class="col-12 text-center" [innerHTML]="data.submessage"></p>
+  </div>
+  <div class="btn-container">
+    <button *ngIf="data.cancelBtn != ''" class="btn btn-outline-cancel" mat-dialog-close>{{data.cancelBtn}}</button>
+    <button class="btn btn-outline" [mat-dialog-close]="true" cdkFocusInitial>{{data.confirmBtn}}</button>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="row">
+    <h4 class="col-sm-12">Selección de asignación</h4>
+</div>
+<hr class="red" />
+<div class="row asignacion-title col-sm-12">
+    <div class="col-sm-12 row">
+        <div class="col-sm-4 contenedor-indiv" *ngFor="let asignacion of User.listaAsignacionUnidadMedica"
+        (click)="unidadSeleccionada(asignacion)">
+            <div class="asignacion-item">
+                <div class="encabezado-cont">
+                    <strong> {{asignacion.desUnidadMedica}} </strong><br>
+                </div>
+                <hr>
+                <div class="cuerpo-cont"><strong> {{asignacion.desNivelAtencion}} </strong><br> <strong>{{asignacion.desTipoAsignacion}} </strong></div>
+            </div>
+        </div>
+    </div>
+</div>

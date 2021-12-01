@@ -1,0 +1,46 @@
+<nav>
+    <div class="container" *ngIf ="asignacionSeleccionada">
+        <div class="col-sm-7 pl-0">
+        </div>
+        <div class="col-sm-2">
+                
+        </div>
+        <div class="circulo-container col-sm-3" >
+            <div class="iniciales-container" (mouseover)="cambiaPrimerHover()" (mouseleave)="isHover = false">
+                <strong>{{usuarioAsignacion.iniciales}}</strong>
+            </div>           
+            <div class="down-container" (mouseover)="secondHover = true"></div>
+        </div>
+    </div>
+    <div class="col-sm-12 main-dropdown">
+        <div class="dropdown-container col-sm-4" *ngIf = "isHover || secondHover" 
+        (mouseover)="enableHover()" (mouseleave)="disableHover()">
+            <div class="iniciales-container2">
+                <strong>{{usuarioAsignacion.iniciales}}</strong>
+            </div>
+            <strong>{{User.nombrePersonal}}</strong><br>
+            <div *ngIf="medico"> <a >Médico</a></div>
+            <div *ngIf="enfermera"><a>Enfermería</a></div>
+            <div *ngIf="trabajadorSocial"><a>Trabajador Social</a> </div>
+        <hr>
+        <a>Matrícula:&nbsp;{{User.cveMatricula}}</a> <br>
+        <div *ngIf="mostrarDatosAsignacion">
+        <a>OOAD:&nbsp;{{usuarioAsignacion.desDelegacion}}</a><br>
+        <a>Unidad:&nbsp;{{usuarioAsignacion.desUnidadMedica}}</a> <br>
+        <a>Clave presupuestal:&nbsp;{{usuarioAsignacion.clavePresupuestal}}</a> <br><br></div>
+        <strong (click)="logout()" class="div-cerrar">  Cerrar sesión </strong>
+        </div>
+    </div>
+
+    <div class="col-sm-12 unassigned-container" *ngIf ="!asignacionSeleccionada">
+        <div class="col-sm-8"></div>
+        <div class="nav-name data-container col-sm-4">
+            <h5>{{ User.nombrePersonal }}</h5>
+            <h5 class="col-sm-5 circulo-container close-link" (click)="logout()">Cerrar sesión</h5>
+        </div>
+    </div>
+</nav>
+<section class="container">
+    <router-outlet></router-outlet>
+</section>
+

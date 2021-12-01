@@ -1,0 +1,15 @@
+.form-container{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-fluid{
+    display: flex;
+    padding-left: 0;
+}
+
+.img-container, .form-container{
+    width: 50%;
+}

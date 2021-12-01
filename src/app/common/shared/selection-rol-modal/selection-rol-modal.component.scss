@@ -1,0 +1,86 @@
+@import '../../../variables.scss';
+.modal-container{
+    min-width: 550px;
+    min-height: 300px;
+    max-height: 550px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.text-center{
+    margin: 0;
+    padding: 0;
+}
+
+label{
+    text-align: justify;
+}
+
+.individual-container{
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    margin-left: 0px;
+}
+
+.body-container{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-secondary{
+    padding-left: 20px;
+    margin-left: 0px;
+    border: 2px solid $gris3;
+    color: $gris3 !important;
+    background-color: transparent !important;
+}
+
+.btn-secondary:hover{
+    background-color: $gris3 !important;
+    color: white !important;
+}
+
+.btn-outline:disabled{
+    background-color: $rojo;
+}
+
+h1{
+    width: 100%;
+    height: 80px;
+    background: $gris_oscuro;
+    color: white;
+    padding: 10px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-container{
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 15px auto;
+    padding-bottom: 10px;
+}
+
+.mt{
+    min-height: 150px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.over{
+    overflow: auto;
+    padding-top: 16px;
+}
+
+.btn{
+    width: 120px;
+}

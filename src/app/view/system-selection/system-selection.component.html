@@ -1,0 +1,27 @@
+<div class="row">
+    <h4 class="col-sm-12">Sistemas</h4>
+</div>
+<hr class="red"/>
+<div class="system-container col-sm-12">
+    <div class="col-md-4  col-sm-6 col-xs-12 card-container">
+        <div class="external-card red-card" (click)="redireccionaAPO()">
+            <div class="internal-card">
+                <h5>Tratamiento de quimioterapia</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4  col-sm-6 col-xs-12 card-container">
+        <div class="external-card pink-card" (click)="modalSeleccionSubrol()">
+            <div class="internal-card">
+                <h5>Cáncer de mama</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4  col-sm-6 col-xs-12 card-container" *ngIf="mostrarTercerSistema">
+        <div class="external-card blue-card">
+            <div class="internal-card">
+                <h5>Cáncer de prostata</h5>
+            </div>
+        </div>
+    </div>
+</div>

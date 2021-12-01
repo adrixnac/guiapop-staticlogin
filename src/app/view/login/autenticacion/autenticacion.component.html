@@ -1,0 +1,76 @@
+<app-modal-info [titulo]='tituloDialogo' [mensaje]='mensajeDialogo' [boton]='botonDialogo' [showDialog]='showDialog'
+  (cerrarDialog)="showDialog=$event"></app-modal-info>
+
+<section class="container-fluid">
+  <div class="img-container">
+        <img src="assets/img/login_oncologia.jpg" alt="login-banner" width="100%" height="100%" />
+  </div>
+  <div class="form-group form-container">
+    <div class="col-sm-12">
+      <h4 class="text-center text-uppercase" >
+        aplicación de pacientes <br />
+        oncológicos pediátricos
+      </h4>
+    </div>
+    <form [formGroup]="autenticacionForm" role="form" class="col-sm-11" >
+      <div class="col-sm-12 form-group">
+        <input
+          formControlName="usuario"
+          id="idUsuario"
+          type="text"
+          class="form-control"
+          placeholder="Matrícula*"
+          maxlength="50"
+          autocomplete="username"
+        />
+        <div *ngIf="validarFormulario && formulario.usuario.errors">
+          <small
+            *ngIf="validarFormulario && formulario.usuario.errors.required"
+            class="form-text form-text-error"
+            >{{ smallRequerido }}</small
+          >
+        </div>
+        <br />
+        <input
+          formControlName="password"
+          id="idPassword"
+          type="password"
+          class="form-control"
+          placeholder="Contraseña*"
+          maxlength="50"
+          autocomplete="current-password"
+        />
+        <div *ngIf="validarFormulario && formulario.password.errors">
+          <small
+            *ngIf="validarFormulario && formulario.password.errors.required"
+            class="form-text form-text-error"
+            >{{ smallRequerido }}</small
+          >
+        </div>
+        <br />
+        <app-captcha
+          siteKey="6LfRkssZAAAAAKCmzP4ncb7zoprDvQgLg_8XbNI2"
+          (onResponse)="captchaResponse($event)"
+          (onExpired)="captchaExpired($event)"
+        ></app-captcha>
+        <div *ngIf="validarFormulario && !captcha">
+          <small class="form-text form-text-error">{{ smallRequerido }}</small>
+        </div>
+        <small class="form-text">*Campos obligatorios</small>
+      </div>
+    </form>
+    <div class="pull-right">
+      <button
+        id="idLoginButton"
+        name="loginButton"
+        type="submit"
+        role="button"
+        [disabled]="!autenticacionForm.valid"
+        class="btn btn-primary"
+        (click)="autenticar()"
+      >
+        Ingresar
+      </button>
+    </div>
+  </div>
+</section>

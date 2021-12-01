@@ -1,0 +1,88 @@
+@import '../../variables.scss';
+
+.system-container{
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 100px;
+    justify-content: center;
+}
+
+
+.external-card{
+    height: 130px;
+    width: 280px;
+    border-radius: 5%;
+    position: relative;
+    border: solid;
+    border-width: 1px;
+    border-color: $gris;
+    box-shadow: 5px 30px 30px $gris_claro;
+}
+
+.internal-card{
+    position: absolute;
+    left: 15px;
+    height: 128px;
+    width: 252px;
+    border-top-left-radius: 10%;
+    background-color: $blanco;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.red-card{
+    background: linear-gradient(to right, $rojo 0%, $rojo 50%, $blanco 50%, $blanco 100%);
+}
+
+.red-card:hover{
+    background: linear-gradient(to right, $rojo 0%, $rojo 50%, $gris_claro 50%, $gris_claro 100%);
+    cursor: pointer;
+}
+
+.pink-card{
+    background: linear-gradient(to right, $rosa 0%, $rosa 50%, $blanco 50%, $blanco 100%);
+}
+
+.pink-card:hover{
+    background: linear-gradient(to right, $rosa 0%, $rosa 50%, $gris_claro 50%, $gris_claro 100%);
+    cursor: pointer;
+}
+
+.blue-card{
+    background: linear-gradient(to right, $azul_claro 0%, $azul_claro 50%, $blanco 50%, $blanco 100%);
+}
+
+.blue-card:hover{
+    background: linear-gradient(to right, $azul_claro 0%, $azul_claro 50%, $gris_claro 50%, $gris_claro 100%);
+    cursor: pointer;
+}
+
+.red-card:hover >.internal-card , .blue-card:hover >.internal-card, .pink-card:hover >.internal-card{
+    background-color: $gris_claro !important;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 996px) {
+    .card-container{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+   .card-container{
+       display: block;
+   }
+
+    .external-card{
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

@@ -1,0 +1,19 @@
+<div class="modal fade" [id]="idModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">{{ titulo }}</h4>
+        </div>
+        <div class="modal-body">
+          <div [innerHTML]="mensaje">
+            <p>{{mensaje}}</p>
+          </div>
+        </div>
+        <div class="modal-footer">        
+          <button *ngIf="botonEvento" type="button" class="btn btn-primary" (click)="dispararEvento()">{{ botonEvento }}</button>
+          <button type="button" class="btn btn-default" (click)="cerrarModal()">{{ boton }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

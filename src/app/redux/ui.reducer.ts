@@ -1,0 +1,20 @@
+import * as fromUI from './ui.actions';
+
+export interface State  {
+    isLoading: boolean;
+}
+
+const initState:State = {
+    isLoading: false
+}
+
+export function uiReducer( state = initState, action: fromUI.actions ): State{
+    switch(action.type){
+        case fromUI.ACTIVAR_LOADING:
+            return {...state, isLoading:true};
+        case fromUI.DESACTIVAR_LOADING:
+            return {...state, isLoading: false}
+        default:
+            return state;
+    }
+}

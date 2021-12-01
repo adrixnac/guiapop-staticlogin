@@ -1,0 +1,26 @@
+<div class="modal-container">
+    <h1 mat-dialog-title class="text-center">{{data.title}}</h1>
+    <div class="individual-container">
+        <h2 mat-dialog-title class="text-center"><strong>{{data.message}}</strong></h2>
+    </div>
+    <div class="max-width body-container">
+            <div class="col-sm-9">
+                <label>Rol:</label>
+                 <input disabled class="form-control" type="text"  [(ngModel)]="data.rol" name="nss" maxlength="10" />
+            </div>
+            <div class="col-sm-9 individual-container  ">
+                <label> Sub-rol: </label><br>
+                <mat-form-field appearance="outline" class="max-width pt">
+                    <mat-select placeholder="Selecciona el sub-rol"  [(ngModel)]="rolSeleccionado">
+                        <mat-option *ngFor="let subrol of data.subroles" [value]="subrol">
+                            {{subrol.desRol}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+    </div>
+    <div class="btn-container">
+      <button *ngIf="data.cancelBtn != ''" class="btn btn-secondary" mat-dialog-close>{{data.cancelBtn}}</button>
+      <button class="btn btn-outline" (click)="guardaSubRol()" mat-dialog-close [disabled]="rolSeleccionado==null">{{data.confirmBtn}}</button>
+    </div>
+  </div>
